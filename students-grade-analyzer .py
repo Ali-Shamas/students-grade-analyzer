@@ -5,8 +5,11 @@ def display_student_summary():
     while attempt <= student_number:
         name = input("Enter the name of student : ")
         grade = float(input("Enter the grade of student , out of 100 " + name + ": "))
-        students.append((name, grade))
-        attempt += 1
+        if grade > 100 or grade < 0 :
+            print("re-enter grade out of 100 ")
+        else :
+            students.append((name, grade))
+            attempt += 1
     for student in students:
         print("Name:" + student[0]  +  " , Grade: " + str(student[1])) 
         
